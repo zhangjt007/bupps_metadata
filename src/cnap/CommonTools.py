@@ -30,9 +30,7 @@ def msg_type_to_route_code(msg_type, pay_channel):
         "ibps": "6",
         "maps": "7"
     }
-    return payChannel[pay_channel.lower()] + payChannel[msg_type[0:4]] + msg_type[5:8] + msg_type[9:].replace(".",
-                                                                                                              "").replace(
-        "0", "")
+    return msg_type[0:4] + msg_type[5:8] + msg_type[13:].replace(".", "").replace("0", "")
 
 
 msg_type_service_type_rel = {
@@ -46,7 +44,9 @@ msg_type_service_type_rel = {
     "beps.125.001": "961003",
     "beps.127.001": "962001",
     "beps.131.001": "962001",
-    "beps.133.001": "962003"
+    "beps.133.001": "962003",
+    "ibps.101.001": "961001",
+    "ibps.103.001": "962001",
 }
 
 
